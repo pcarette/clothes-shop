@@ -21,13 +21,13 @@ const Navbar = () => {
         </Link>
         <div className="nav-links-container">
           <Link className="nav-link" to="/shop">
-            <a href="#">SHOP</a>
+            SHOP
           </Link>
           {currentUser ? (
             <span className="nav-link" onClick={signOutUser}>SIGN OUT</span>
             ):(
           <Link className="nav-link" to="/auth">
-            <a href="#">SIGN IN</a>
+            SIGN IN
           </Link>
           )}
           <CartIcon />
