@@ -9,7 +9,6 @@ import "./category.sass.scss";
 import Home from "./routes/home/home.component";
 import Navbar from "./components/Navbar/Navbar";
 import Authentication from "./routes/authentication/authentication.component";
-import { UserContext } from "./contexts/user.context";
 import Shop from "./components/shop/shop.component";
 import Checkout from "./routes/checkout/checkout.component";
 import { setCurrentUser } from './store/user/user.action'
