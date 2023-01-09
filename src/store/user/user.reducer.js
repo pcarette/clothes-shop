@@ -8,8 +8,6 @@ export const userReducer = (state = USER_INITIAL_STATE, action = {}) => {
   switch (type) {
     case USER_ACTIONS_TYPES.SET_CURRENT_USER:
       return { ...state, currentUser: payload };
-    case "increment":
-      
     default:
       return state;
   }
