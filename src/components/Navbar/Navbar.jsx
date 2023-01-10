@@ -13,6 +13,7 @@ import {selectIsCartOpen} from '../../store/cart/cart.selector'
 
 const Navbar = () => {
   const currentUser = useSelector(selectCurrentUser)
+  console.log(currentUser)
   const isCartOpen = useSelector(selectIsCartOpen)
   return (
     <Fragment>
