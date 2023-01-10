@@ -5,9 +5,12 @@ import {
 } from "redux";
 import logger from "redux-logger";
 import { persistStore, persistReducer } from "redux-persist";
+import createSagaMiddleware from 'redux-saga';
 import storage from "redux-persist/lib/storage";
 
 import { rootReducer } from "./root-reducer";
+import { rootSaga } from "./root-saga";
+
 
 //root-reducer
 const persistConfig = {
@@ -16,9 +19,11 @@ const persistConfig = {
   blacklist: ["user"],
 };
 
+const sagaMiddleware = createSagaMiddleware()
+
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
-const middleWares = [process.env.NODE_ENV !== "production" && logger].filter(
+const middleWares = [process.env.NODE_ENV !== "production" && logger,  sagaMiddleware].filter(
   Boolean
 );
 
@@ -35,5 +40,7 @@ export const store = createStore(
   undefined,
   composedEnhancers
 );
+
+sagaMiddleware.run(rootSaga);
 
 export const persistor = persistStore(store);
