@@ -40,7 +40,6 @@ const SignInForm = () => {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    console.log('chien')
     try {
       dispatch(emailSignInStart(email, password))
       resetFormFields();
